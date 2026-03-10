@@ -1,0 +1,13 @@
+# gapi_full_audit — Python dependencies
+# Install with: pip install -r requirements.txt
+# Requires: Python 3.8+
+
+# HTTP client — fetching HTML and JS assets, API validation requests
+requests>=2.28.0
+
+# HTML parsing — extracting <script>, <link>, <a> tags from page source
+beautifulsoup4>=4.11.0
+
+# HTML parser backend used by beautifulsoup4
+# Faster and more lenient than Python's built-in html.parser
+lxml>=4.9.0
