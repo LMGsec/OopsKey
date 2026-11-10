@@ -30,7 +30,7 @@ import argparse
 import requests
 from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, UTC
 from dataclasses import dataclass
 from typing import Optional, List, Dict, Set, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -920,7 +920,7 @@ def main():
             "tool":                "gapi_full_audit_v4",
             "authorized_use_only": True,
             "mode":                "single_key",
-            "timestamp":           datetime.utcnow().isoformat(),
+            "timestamp":           datetime.now(UTC).isoformat(),
             "static_validation":   sv_msg,
             "validation":          result,
         }
@@ -976,7 +976,7 @@ def main():
         "tool":                "gapi_full_audit_v4",
         "authorized_use_only": True,
         "mode":                "web_scan",
-        "timestamp":           datetime.utcnow().isoformat(),
+        "timestamp":           datetime.now(UTC).isoformat(),
         "target_url":          args.url,
         "crawl_depth":         args.depth,
         "js_recursion_depth":  JS_RECURSION_DEPTH,
